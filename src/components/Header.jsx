@@ -4,8 +4,8 @@ import { BiSearchAlt, BiMenuAltLeft } from 'react-icons/bi';
 function Header() {
     return (
         <nav>
-            <BiMenuAltLeft size='2rem'/>
-            <BiSearchAlt size='2rem'/>
+            <BiMenuAltLeft size='1.8rem'/>
+            <BiSearchAlt size='1.8rem'/>
         </nav>
     )
 }
