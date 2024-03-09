@@ -6,23 +6,29 @@ import LocationInfo from "./components/LocationInfo"
 import WeatherInfo from "./components/WeatherInfo"
 import AdditionalInfo from "./components/AdditionalInfo"
 import TemperatureInfo from "./components/TemperatureInfo"
-import SideMenu from "./components/SideMenu"
+import { LinearProgress } from "@mui/joy"
 
 function App() {
   const dispatch = useDispatch()
   const weather = useSelector(state => state.weather);
 
   useEffect(() => {
-    // dispatch(fetchWeatherData())
+    dispatch(fetchWeatherData())
   }, [])
   
   return (
     <div className="layout">
       <Header/>
-      <LocationInfo/>
-      <WeatherInfo/>
-      <AdditionalInfo/>
-      <TemperatureInfo/>
+      {
+        weather ? 
+        <>
+          <LocationInfo/>
+          <WeatherInfo/>
+          <AdditionalInfo/>
+          <TemperatureInfo/>
+        </>
+        : <LinearProgress/>
+      }
     </div>
   )
 }

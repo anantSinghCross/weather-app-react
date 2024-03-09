@@ -2,7 +2,7 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 
 function LocationInfo() {
-  const dateString = useSelector(state => state.weather?.weather?.timelines.hourly[0].time)
+  const dateString = useSelector(state => state.weather?.timelines.hourly[0].time)
   const currDate = new Date(dateString);
   return (
     <div className='location-container'>

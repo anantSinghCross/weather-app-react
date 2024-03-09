@@ -2,7 +2,10 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 
 function AdditionalInfo() {
-  const additionalData = useSelector(state => state.weather?.weather?.timelines.daily[0].values);
+  const additionalData = useSelector(state => state.weather?.timelines?.daily[0]?.values);
+  if(!additionalData) {
+    return <div>Loading...</div>
+  }
   const { precipitationProbabilityAvg, windSpeedAvg, humidityAvg } = additionalData;
   return (
     <div className='additional-container'>

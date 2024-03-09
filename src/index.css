@@ -54,6 +54,7 @@ option {
   background-color: yellow;
   background: url('https://images.unsplash.com/photo-1527267207156-3372670819dc');
   background-size: cover;
+  height: 25vw;
   min-height: 150px;
   flex: 1;
   position: relative;

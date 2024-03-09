@@ -5,16 +5,18 @@ import { prepareChartData } from '../utils';
 
 function TemperatureInfo() {
   const [frequency, setFrequency] = useState('daily');//minutely, hourly
-  const timelinesData = useSelector(state => state.weather?.weather.timelines);
-  const preparedChartData = prepareChartData(frequency, timelinesData[frequency]);
-  console.log(preparedChartData);
+  const timelinesData = useSelector(state => state.weather?.timelines);
+  const preparedChartData = timelinesData? prepareChartData(frequency, timelinesData[frequency]) : [];
+  
   const chartOptions = {
     data: preparedChartData,
     series: [{ type: 'area', xKey: 'time', yKey: 'temp', yName: 'Avg. Temperature', fill: '#FF8900' }]
   }
+  
   const handleFreqChange = (e) => {
     setFrequency(e.target.value);
   }
+
   return (
     <div className='temperature-container'>
       <div className='temperature-header'>
