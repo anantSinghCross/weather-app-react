@@ -6,7 +6,7 @@ import LocationInfo from "./components/LocationInfo"
 import WeatherInfo from "./components/WeatherInfo"
 import AdditionalInfo from "./components/AdditionalInfo"
 import TemperatureInfo from "./components/TemperatureInfo"
-
+import SideMenu from "./components/SideMenu"
 
 function App() {
   const dispatch = useDispatch()
